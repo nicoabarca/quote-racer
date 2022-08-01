@@ -1,35 +1,35 @@
-# typeracer-clone
+# quote-racer
 
-This template should help get you started developing with Vue 3 in Vite.
+A simple game where you write random quotes, made with [Vue](https://vuejs.org/).
 
-## Recommended IDE Setup
+![Game image](static/game.png)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+This is a **work in progress** project. 
 
-## Customize configuration
+## Project Setup 
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+### Requirements
 
-## Project Setup
+* Node.js version 15.0 or higher
+
+### Steps
+
+* Clone the repository 
+
+```sh
+git clone https://github.com/nicoabarca/quote-racer.git
+```
+
+* Install dependencies
 
 ```sh
 npm install
 ```
-
-### Compile and Hot-Reload for Development
+* Run local development server
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+And you are ready.
 
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
