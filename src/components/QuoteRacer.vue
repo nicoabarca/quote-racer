@@ -24,10 +24,12 @@ export default {
   },
   methods: {
     checkWord() {
-      this.wordsList[this.activeIndex] === this.textInput.trim()
-        ? (this.$refs.words[this.activeIndex].className = "correct")
-        : (this.$refs.words[this.activeIndex].className = "incorrect");
-
+      if (this.wordsList[this.activeIndex] === this.textInput.trim()) {
+        this.$refs.words[this.activeIndex].className = "correct";
+        this.correctWords += 1;
+      } else {
+        this.$refs.words[this.activeIndex].className = "incorrect";
+      }
       this.changeActiveWord();
       this.textInput = "";
     },
@@ -55,6 +57,7 @@ export default {
       this.wordsList = newData["content"].split(" ");
       this.quoteAuthor = newData["author"];
       this.activeWord = this.wordsList[0];
+      this.correctWords = 0;
       this.activeIndex = 0;
       if (this.$refs.words) {
         this.$refs.words.forEach((el) => (el.className = "neutral"));
@@ -67,7 +70,9 @@ export default {
 <template>
   <div class="main">
     <div class="game">
-      <div class="word-counter">{{ activeIndex }} / {{ wordsList.length }}</div>
+      <div class="word-counter">
+        {{ correctWords }} / {{ wordsList.length }}
+      </div>
       <div v-if="wordsList" class="text">
         <span
           v-for="(word, index) in wordsList"
@@ -94,7 +99,7 @@ export default {
       />
       <div>
         <button class="reset-button" @click="fetchRandomQuote">
-          Reset Quote
+          New Quote
         </button>
       </div>
     </div>
