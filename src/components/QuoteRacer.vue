@@ -74,29 +74,15 @@ export default {
         {{ correctWords }} / {{ wordsList.length }}
       </div>
       <div v-if="wordsList" class="text">
-        <span
-          v-for="(word, index) in wordsList"
-          :key="index"
-          :id="index"
-          ref="words"
-          class="neutral"
-        >
+        <span v-for="(word, index) in wordsList" :key="index" :id="index" ref="words" class="neutral">
           {{ `${word} ` }}
         </span>
       </div>
       <p class="author">
         Author: <i>{{ quoteAuthor }}</i>
       </p>
-      <input
-        class="text-input"
-        autofocus
-        maxlength="16"
-        type="text"
-        v-model="textInput"
-        @keydown.space="checkWord"
-        :disabled="inputDisabled"
-        :placeholder="inputPlaceholder"
-      />
+      <input class="text-input" autofocus maxlength="16" type="text" v-model="textInput" @keydown.space="checkWord"
+        :disabled="inputDisabled" :placeholder="inputPlaceholder" />
       <div>
         <button class="reset-button" @click="fetchRandomQuote">
           New Quote
